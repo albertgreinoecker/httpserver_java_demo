@@ -19,6 +19,7 @@ public class HomeHandler implements HttpHandler {
 	public HomeHandler() {
 		links.add(new Link("Simple Demo for generating HTML", "simple_html"));
 		links.add(new Link("Simple Demo for dealing with GET Parameters", "simple_get"));
+		links.add(new Link("Simple Form", "simple_form"));
 	}
 
 	@Override

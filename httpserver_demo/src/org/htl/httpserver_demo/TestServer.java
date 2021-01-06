@@ -5,8 +5,8 @@ import java.net.InetSocketAddress;
 
 import org.htl.httpserver_demo.handler.GetParameterHandler;
 import org.htl.httpserver_demo.handler.HTMLFormHandler;
+import org.htl.httpserver_demo.handler.HeaderParameterHandler;
 import org.htl.httpserver_demo.handler.HomeHandler;
-import org.htl.httpserver_demo.handler.PostParameterHandler;
 import org.htl.httpserver_demo.handler.SimpleHtmlHandler;
 
 /*
@@ -25,7 +25,7 @@ public class TestServer {
 		server.createContext("/", new HomeHandler());
 		server.createContext("/simple_html", new SimpleHtmlHandler());
 		server.createContext("/simple_get", new GetParameterHandler());
-		server.createContext("/simple_post", new PostParameterHandler());
+		server.createContext("/header_parameters", new HeaderParameterHandler());
 		server.createContext("/simple_form", new HTMLFormHandler());
 		//Starts this server in a new background thread. Progam still alive
 		server.start();

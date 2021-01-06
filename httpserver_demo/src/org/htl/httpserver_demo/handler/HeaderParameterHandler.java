@@ -12,17 +12,16 @@ import com.sun.net.httpserver.HttpHandler;
 /**
  * A simple example how get paramters can be used
  */
-public class PostParameterHandler implements HttpHandler {
+public class HeaderParameterHandler implements HttpHandler {
 	@Override
 	public void handle(HttpExchange httpExchange) throws IOException {
 
-		HashMap<String, String> getParams = HttpUtils.postParamsToMap(httpExchange);
+		HashMap<String, String> getParams = HttpUtils.headerParamsToMap(httpExchange);
 		
 		OutputStream outputStream = httpExchange.getResponseBody();
 		StringBuilder str = new StringBuilder();
 		str.append("<html><body>");
-		String query = httpExchange.getRequestURI().toString();
-		str.append("Parameters are fetched from this String:<b>" + query + "</b>");
+		str.append("<h3>Show header parameters</h3>");
 		str.append("<ul>");
 		for (String name : getParams.keySet())
 		{

@@ -39,7 +39,7 @@ public class HttpUtils {
 	 * @return
 	 * @throws IOException
 	 */
-	public static HashMap<String, String> postParamsToMap(HttpExchange httpExchange) throws IOException {
+	public static HashMap<String, String> headerParamsToMap(HttpExchange httpExchange) throws IOException {
 		HashMap<String, String> result = new HashMap<String, String>();
 		Headers requestHeaders = httpExchange.getRequestHeaders();
 

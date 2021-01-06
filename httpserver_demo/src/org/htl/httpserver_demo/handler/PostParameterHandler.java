@@ -16,7 +16,7 @@ public class PostParameterHandler implements HttpHandler {
 	@Override
 	public void handle(HttpExchange httpExchange) throws IOException {
 
-		HashMap<String, String> getParams = HttpUtils.getParamsToMap(httpExchange);
+		HashMap<String, String> getParams = HttpUtils.postParamsToMap(httpExchange);
 		
 		OutputStream outputStream = httpExchange.getResponseBody();
 		StringBuilder str = new StringBuilder();

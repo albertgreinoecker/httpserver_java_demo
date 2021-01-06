@@ -40,8 +40,8 @@ public class HttpUtils {
 	 * @return
 	 * @throws IOException
 	 */
-	public static Map<String, String> postParamsToMap(HttpExchange httpExchange) throws IOException {
-		Map<String, String> result = new HashMap<String, String>();
+	public static HashMap<String, String> postParamsToMap(HttpExchange httpExchange) throws IOException {
+		HashMap<String, String> result = new HashMap<String, String>();
 		Headers requestHeaders = httpExchange.getRequestHeaders();
 
 		for (Entry<String, List<String>> e : requestHeaders.entrySet()) {
@@ -49,7 +49,6 @@ public class HttpUtils {
 			String value = e.getValue().get(0);
 			result.put(name, value);
 		}
-
 		return result;
 	}
 }

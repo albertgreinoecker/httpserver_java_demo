@@ -20,8 +20,6 @@ public class HTMLFormHandler implements HttpHandler {
 		String str = null;
 		try {
 			str = FileUtils.readTextFromClassPath("/org/htl/httpserver_demo/resources/example_form.html");
-			System.out.println(str);
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

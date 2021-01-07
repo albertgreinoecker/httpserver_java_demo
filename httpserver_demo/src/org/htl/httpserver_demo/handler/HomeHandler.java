@@ -27,15 +27,16 @@ public class HomeHandler implements HttpHandler {
 	public void handle(HttpExchange httpExchange) throws IOException {
 
 		OutputStream outputStream = httpExchange.getResponseBody();
+		
 		StringBuilder str = new StringBuilder();
-		str.append("<html><title> HttpServer Demo</title><body>");
+		str.append("<!DOCTYPE html><html><title> HttpServer Demo</title><body>");
 		str.append("<ul>");
 		for (Link link : links)
 		{
 			String linkStr = String.format("<li><a href='%s'>%s</a> </li>", link.getUrl(), link.getDisplayName());
 			str.append(linkStr);
 		}
-		str.append("</ul");
+		str.append("</ul>");
 		str.append("</body></html>");
 		httpExchange.getResponseHeaders().set("Content-Type", "text/html; charset=UTF-8");
 		httpExchange.sendResponseHeaders(200, str.length()); // 200, everything went ok

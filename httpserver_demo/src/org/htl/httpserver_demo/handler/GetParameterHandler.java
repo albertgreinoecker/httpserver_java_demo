@@ -27,7 +27,7 @@ public class GetParameterHandler implements HttpHandler {
 		for (String name : getParams.keySet())
 		{
 			String pars = String.format("<li>%s : %s </li>" , name, getParams.get(name));
-			str.append(pars);
+			str.append(pars); 	
 			
 		}
 		str.append("</ul></body></html>");

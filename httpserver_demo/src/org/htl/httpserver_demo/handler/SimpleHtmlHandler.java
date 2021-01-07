@@ -10,6 +10,7 @@ import com.sun.net.httpserver.HttpHandler;
  * Simple HTML is generated within this handler
  */
 public class SimpleHtmlHandler implements HttpHandler {
+	
 	@Override
 	public void handle(HttpExchange httpExchange) throws IOException {
 

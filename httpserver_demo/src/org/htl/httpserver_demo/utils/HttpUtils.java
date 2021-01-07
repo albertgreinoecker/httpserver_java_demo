@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import com.sun.net.httpserver.Headers;
@@ -21,8 +20,10 @@ public class HttpUtils {
 	public static HashMap<String, String> getParamsToMap(HttpExchange httpExchange) {
 		HashMap<String, String> result = new HashMap<String, String>();
 		String query = httpExchange.getRequestURI().getQuery();
-		System.out.println(query);
-
+		if (query == null)
+		{
+			return result;
+		}
 		for (String param : query.split("&")) {
 			String pair[] = param.split("=");
 			if (pair.length > 1) {
@@ -59,8 +60,6 @@ public class HttpUtils {
 		InputStreamReader isr = new InputStreamReader(httpExchange.getRequestBody(), "utf-8");
 		BufferedReader br = new BufferedReader(isr);
 		String query = br.readLine();
-		System.out.println(query);
-
 		return processQuery(query);
 	}
 

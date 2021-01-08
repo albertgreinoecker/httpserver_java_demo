@@ -29,7 +29,7 @@ public class TestServer {
 		server.createContext("/header_parameters", new HeaderParameterHandler());
 		server.createContext("/simple_form", new HTMLFormHandler());
 		server.createContext("/simple_form_processor", new HTMLFormProcessorHandler());
-		//Starts this server in a new background thread. Progam still alive
+		//Starts this server in a new background thread. Program still alive
 		server.start();
 
 		System.out.println(" Server started on port 8008");
